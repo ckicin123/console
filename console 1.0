@@ -1,0 +1,906 @@
+import random
+import math
+import time as t
+time=""
+print("        ______                   ___________________________")
+print("       |      |                 |                           |")
+print("       |      |                 | type \"functions\" for help |")
+print("       |      |                  ---------------------------")
+print("       |      |")
+print("       |      |")
+print("       |      |")
+print("       |______|")
+print("     ------------")
+print("     \          /")
+print("      \        /")
+print("       \      /")
+print("        \    /")
+print("         \  /")
+print("          \/")
+print("type in something to use this console to begin use")
+def timestable():
+     try:
+          time=float(input("type in a number to get it's times tables: "))
+          print("")
+          max=float(input("how high of a max multiple do you want?: "))
+          print("")
+          timeo = time
+          while time <= max:
+               print(time)
+               time += timeo
+     except:
+          print("error: not a number")
+def power():
+     try:
+          num=int(input("type in a number: "))
+          power=int(input("to the power to?: "))
+          print(num ** power)
+     except:
+          print("error: not a number")
+def functions():
+     func=["functions","timestable","power","guess","coinflip","gradecheck","onetowhat","math","commonmulti","factor","commonfact","guessinggame2p","fight","rps","cat","note","elements","quiz","about","averages","sum","mathopu"]
+     x=0
+     for i in func:
+          print(func[x])
+          x=x+1
+def guess():
+     try:
+          gue=int(input("type in a number from 1-10: "))
+          print("")
+          gues=random.randint(1,10)
+          if gues==gue:
+                  print("correct")
+          else:
+               print("wrong it was",gues)
+     except:
+          print("error: not a number")
+def coinflip():
+     coingue=random.randint(1,2)
+     if coingue==1:
+          print("heads")
+     else:
+          print("tails")
+def gradecheck():
+     try:
+          grade=int(input("put in your percentage of a test \nand you will be given a letter of your score: "))
+          print("")
+          if grade>=70: 
+               print("A")
+          elif grade>=60:
+              print("B")
+          elif grade>=40:
+               print("C")
+          else:
+               print("F better luck next time")
+     except:
+          print("error: not a valid number")
+def onetowhat():
+     try:
+          to=int(input("a random number from 1 to: "))
+          tow=random.randint(1,to)
+          print("")
+          print(tow)
+     except:
+          print("error: not a valid number")
+def math():
+     try:
+          fnum=float(input("first number: "))
+          print("")
+          op=input("operator: ")
+          print("")
+          snum=float(input("second number: "))
+          if op=="*":
+               print(fnum * snum)
+          elif op=="+":
+                print(fnum + snum)
+          elif op=="-":
+               print(fnum - snum)
+          elif op=="/":
+               print(fnum / snum)
+          elif op=="**":
+               print(fnum ** snum)
+          else:
+               print("")
+               print("invalid operator")
+     except:
+          print("error: not a number")
+def commonmulti():
+     try:
+          calcu=0
+          print("warning in this mode it can take a very long time to calculate\nif many figures are used ")
+          lcmpick=int(input("how many numbers will you enter 2-4 numbers allowed: "))
+          if lcmpick==2:
+               lcm=float(input("first number: "))
+               lcm1=float(input("second number: "))
+               lcmo=lcm
+               lcm1o=lcm1
+               print("calculating...")
+               while lcm!=lcm1:
+                    if lcm<lcm1:
+                         lcm=lcm+lcmo
+                         calcu=calcu+1
+                    else:
+                         lcm1=lcm1+lcm1o
+                         calcu=calcu+1
+          if lcmpick==3:
+               lcm=float(input("first number: "))
+               lcm1=float(input("second number: "))
+               lcm2=float(input("third number: "))
+               lcm2o=lcm2
+               lcmo=lcm
+               lcm1o=lcm1
+               if lcm==lcm1:
+                    if lcm1==lcm2:
+                         boo=False
+                    else:
+                         boo=True
+               else:
+                    boo=True
+               print("calculating...")
+               while boo==True:
+                    if lcm>lcm1:
+                         lcm1=lcm1o+lcm1
+                         calcu=calcu+1
+                    elif lcm>lcm2:
+                         lcm2=lcm2+lcm2o
+                         calcu=calcu+1
+                    elif lcm1>lcm:
+                         lcm=lcm+lcmo
+                         calcu=calcu+1
+                    elif lcm1>lcm2:
+                         lcm2=lmc2+lcm2o
+                         calcu=calcu+1
+                    elif lcm2>lcm:
+                         lcm=lcm+lcmo
+                         calcu=calcu+1
+                    elif lcm2>lcm1:
+                         lcm1=lcm1+lcm1o
+                         calcu=calcu+1
+                    if lcm==lcm1:
+                         if lcm1==lcm2:
+                              boo=False
+                         else:
+                              boo=True
+                    else:
+                         boo=True
+
+          if lcmpick==4:
+               lcm=float(input("first number: "))
+               lcm1=float(input("second number: "))
+               lcm2=float(input("third number: "))
+               lcm3=float(input("fourth number: "))
+               lcm3o=lcm3
+               lcm2o=lcm2
+               lcmo=lcm
+               lcm1o=lcm1
+               if lcm==lcm1:
+                    if lcm1==lcm2:
+                         if lcm2==lcm3:
+                              boo=False
+                         else:
+                              boo=True
+                    else:
+                         boo=True
+               else:
+                    boo=True
+               print("calculating...")
+               while boo==True:
+                    if lcm>lcm1:
+                         lcm1=lcm1o+lcm1
+                         calcu=calcu+1
+                         #print("1",lcm1)
+                    elif lcm>lcm2:
+                         lcm2=lcm2+lcm2o
+                         calcu=calcu+1
+                         #print("2",lcm2)
+                    elif lcm>lcm3:
+                         lcm3=lcm3+lcm3o
+                         calcu=calcu+1
+                         #print("3",lcm3)
+                    elif lcm1>lcm:
+                         lcm=lcm+lcmo
+                         calcu=calcu+1
+                         #print("4",lcm)
+                    elif lcm1>lcm2:
+                         lcm2=lcm2+lcm2o
+                         calcu=calcu+1
+                         #print("5",lcm2)
+                    elif lcm1>lcm3:
+                         lcm3=lcm3+lcm3o
+                         calcu=calcu+1
+                         #print("6",lcm3)
+                    elif lcm2>lcm:
+                         lcm=lcm+lcmo
+                         calcu=calcu+1
+                         #print("7",lcm)
+                    elif lcm2>lcm1:
+                         lcm1=lcm1o+lcm1
+                         calcu=calcu+1
+                         #print("8",lcm1)
+                    elif lcm2>lcm3:
+                         lcm3=lcm3+lcm3o
+                         calcu=calcu+1
+                         #print("9",lcm3)
+                    elif lcm3>lcm:
+                         lcm=lcm+lcmo
+                         calcu=calcu+1
+                        #print("10",lcm)
+                    elif lcm3>lcm1:
+                         lcm1=lcm1o+lcm1
+                         calcu=calcu+1
+                         #print("11",lcm1)
+                    elif lcm3>lcm2:
+                         lcm2=lcm2+lcm2o
+                         calcu=calcu+1
+                         #print("12",lcm2)
+                    
+                    if lcm==lcm1:
+                         if lcm1==lcm2:
+                              if lcm2==lcm3:
+                                   boo=False
+                              else:
+                                   boo=True
+                         else:
+                              boo=True
+                    else:
+                         boo=True                  
+          print("")
+          print("the lowest common multiple is: ",lcm)
+          print(calcu,"calculations were ran")
+     except:
+          print("error: invalid number")
+def factor():
+     try:
+          hcf=int(input("number: "))
+          cal=True
+          phold=hcf-1
+          multiplied=1
+          phold2=""
+          print("calculating...")
+          print("")
+          while cal==True:
+               if multiplied==hcf:
+                    cal=False
+               else:
+                    phold=phold-1
+               phold2=hcf/phold
+               multiplied=int(phold2)*int(phold)
+          print("the highest common factor is",phold,"and",phold2)
+     except:
+          print("error: invalid number")
+def commonfact():
+     try:
+          print("this will find the highest common factor of 2 numbers")
+          cfn1=int(input("1st number: "))
+          cfn2=int(input("2nd number: "))
+          boo=True
+          booc=True
+          x=1
+          ocf1=cfn1
+          ocf2=cfn2
+          while boo==True:
+               if cfn1==cfn2:
+                    boo=False
+               while booc==True:
+                    x=x+1
+                    n1=n1/x
+                    n2=n2/x
+                    n1r=int(n1)
+                    if n1==n1r:
+                         print("meow")
+                         
+                              
+                    
+          print("the highest common factor is: "+str(cfn1))
+               
+     except:
+          print("error: invalid number")
+def guessinggame2p():
+     try:
+          print("this is a 2 player game on guesssing numbers from 1 to 10\n first to get to 2 correct answers wins a cupcake and pizza from chica")
+          p1=input("please enter player 1's user name: ")
+          p2=input("please enter player 2's user name: ")
+          cor1=0
+          cor2=0
+          boog=True
+          while boog==True:
+               answer=random.randint(1,10)
+               guessp1=int(input(p1+" guess: "))
+               if guessp1==answer:
+                    print("correct")
+                    cor1=cor1+1
+               else:
+                    print("wrong it was",answer)
+               if cor1==2:
+                    
+                    boog=False
+                    win=p1
+               if cor2==2:
+                     boog=False
+                     win=p2
+               print("")
+               answer=random.randint(1,10)
+               guessp2=int(input(p2+" guess: "))
+               if guessp2==answer:
+                    print("correct")
+                    cor2=cor2+1
+               else:
+                    print("wrong it was",answer)
+               print("")
+               if cor1==2:
+                    boog=False
+                    win=p1
+               if cor2==2:
+                    boog=False
+                    win=p2
+          print(win,"wins a cupcake and a pizza from chica")
+     except:
+          print("error: invalid number")
+p1h=100
+comph=100
+cminp=25
+cmaxp=50
+cminc=25
+cmaxc=50
+def fight(p1h,comph,cminp,cmaxp,cminc,cmaxc):
+     try:
+          print("you will fight an AI in this game you can do \n1 to attack \n2 to heal \n3 to block")
+          p1=input("enter your username: ")
+          p1name=str(p1)
+          print("1 for change stats\ntype anything to continue")
+          c=input(": ")
+          print("")
+          if c=="1":
+               p1h=int(input("new player health: "))
+               comph=int(input("new computer health: "))
+               cminp=int(input("new minimum damage/heal for player: "))
+               cmaxp=int(input("new maximum damage/heal for player: "))
+               cminc=int(input("new minimum damage/heal for computer: "))
+               cmaxc=int(input("new maximum damage/heal for computer: "))
+               print("")
+          ocomph=comph
+          print("stats:")
+          print("player health: "+str(p1h))
+          print("player damage/heal is: "+str(cminp)+"-"+str(cmaxp))
+          print("computer health: "+str(comph))
+          print("computer damage/heal is: "+str(cminc)+"-"+str(cmaxc))
+          boof=True
+          p1m=""
+          while boof==True:
+               p1m=int(input(p1name + " move: "))
+               print("")
+               if comph<ocomph/3:
+                    compm=2
+               elif comph>ocomph*3/4:
+                    compm=1
+               else:
+                    compm=random.randint(1,3)
+               p1mv=random.randint(int(cminp),int(cmaxp))
+               compmv=random.randint(int(cminc),int(cmaxc))
+               if p1m==1 and compm!=3:
+                    comph=comph-p1mv
+                    print("you attacked the computer and left it on",comph,"health")
+                    print("")
+               if compm==3:
+                    print("the computer blocked")
+                    print("")
+               if p1m==2:
+                    p1h=p1h+p1mv
+                    print("your health is now",p1h,"health")
+                    print("")
+               if p1m==3 and compm==1:
+                    print("you blocked an attack")
+                    print("")
+               if p1m==3 and compm!=1:
+                    print("you blocked but the computer did not attack")
+                    print("")
+               if compm==1 and p1m!=3:
+                    p1h=p1h-compmv
+                    print("the computer attacked you leaving you on",p1h,"health")
+                    print("")
+               if compm==2:
+                    comph=comph+compmv
+                    print("the computer healed up to",comph,"health")
+                    print("")
+               if 1>comph:
+                    boof=False
+                    win=p1name
+               if 1>p1h:
+                    boof=False
+                    win="the computer"
+          print(win,"won the fight and got freddy's microphone")
+          print("")
+     except:
+          print("error: invalid number")
+def rps():
+     try:
+          print("this is rock paper scissor\n1 for rock\n2 for paper\n3 for scissors")
+          print("fight the fully randomized bot to win")
+          p1=input("enter your username: ")
+          boor=True
+          while boor==True:
+               print("")
+               rpsp=int(input(p1+" make your move: "))
+               rpsc=random.randint(1,3)
+               print("")
+               if rpsp==1:
+                    if rpsc==1:
+                         print("you both played rock")
+                    else:
+                         if rpsc==2:
+                              print("your rock got wraped around in paper")
+                              boor=False
+                              win="the computer"
+                         else:
+                              print("you smashed the computers scissors")
+                              boor=False
+                              win=p1
+               if rpsp==2:
+                    if rpsc==1:
+                         print("you wraped up the computers rock and it suffocated")
+                         boor=False
+                         win="the computer"
+                    else:
+                         if rpsc==2:
+                              print("you both played paper")
+                         else:
+                              print("you got your paper snipped up into the shape of a cookie")
+                              boor=False
+                              win="the computer"
+               if rpsp==3:
+                    if rpsc==1:
+                         print("your scissors got smashed but you can still use it sharp edge at least right")
+                         boor=False
+                         win="the computer"
+                    else:
+                         if rpsc==2:
+                              print("you cut the computers paper into a dove,very impressive")
+                              boor=False
+                              win=p1
+                         else:
+                              print("you both played scissors")
+          print(win+" won bonnies gitar")
+     except:
+          print("error: invalid number")
+def idearate():
+     print("this will rate your idea")
+     idea=input("enter your idea: ")
+     idear=random.randint(0,10)
+     if idea=="cat" or idea=="cats":
+          print("i rate your idea 10 out of 10")
+     else:
+          print("i rate your idea a",idear,"out of 10")
+def cat():
+     boocat=10
+     while boocat>0:
+          for i in "cat":
+               print(i)
+          print("")
+          boocat=boocat-1
+notel=[]
+def note():
+     try:
+          print("")
+          a=int(input("1 for add\n2 for remove\n3 for view\nplease pick a number: "))
+          print("")
+          if a==1:
+               na=input("what do you want to add?: ")
+               notel.insert(1,na)
+               print("added "+na)
+          elif a==2:
+               nr=input("what do you want to remove?: ")
+               print("removed "+nr)
+               try:
+                    notel.remove(nr)
+               except:
+                    print("notes does not contain this")
+          if a==3:
+               print("notes:")
+               print("")
+               for i in notel:
+                    print(i)
+     except:
+          print("error: invalid number")
+def elements():
+     elem=["Actinium","Aluminium","Antimony","Argon","Arsenic","Astatine","Barium","Beryllium","Bismuth","Boron","Bromine","Cadmium","Calcium","Carbon","Caesium","Chlorine","Chromium","Cobalt","Copper","Fluorine","Francium","Gallium","Germanium","Gold","Hafnium","Dubnium","Hassium","Helium","Hydrogen","Indium","Iodine","Iridium","Iron","Krypton","Lanthanum","Lead","Lithium","Magnesium","Manganese","Meitnerium","Mercury","Molybdenum","Neon","Nickel","Niobium","Nitrogen","Osmium","Oxygen","Palladium","Phosphorus","Platinum","Polonium","Potassium","Radium","Radon","Rhenium","Rhodium","Rubidium","Rutherfordium","Scandium","Seaborgium","Selenium","Silicon","Silver","Sodium","Strontium","Sulfur","Tantalum","Technetium","Tellurium","Thalium","Tin","Titanium","Tungsten","Vanadium","Xenon","Yttrium","Zinc","Zirconium"]
+     elemp=[[227,89,"Ac*"],[27,13,"Al"],[122,51,"Sb"],[40,"Ar"],[75,33,"As"],[210,85,"At"],[137,56,"Ba"],[9,4,"Be"],[209,83,"Bi"],[11,5,"B"],[80,35,"Br"],[112,48,"Cd"],[40,20,"Ca"],[12,6,"C"],[133,55,"Cs"],[35.5,17,"Cl"],[52,24,"Cr"],[59,27,"Co"],[63.5,29,"Cu"],[19,9,"F"],[223,87,"Fr"],[70,31,"Ga"],[73,32,"Ge"],[197,79,"Au"],[178,72,"Hf"],[262,105,"Db"],[277,108,"Hs"],[4,2,"He"],[1,1,"H"],[115,49,"In"],[127,53,"I"],[192,77,"Ir"],[56,26,"Fe"],[84,36,"Kr"],[139,57,"La*"],[207,82,"Pb"],[7,3,"Li"],[24,12,"Mg"],[55,25,"Mn"],[268,109,"Mt"],[201,80,"Hg"],[96,42,"Mo"],[20,10,"Ne"],[59,28,"Ni"],[93,41,"Nb"],[14,7,"N"],[190,76,"Os"],[16,8,"O"],[106,46,"Pd"],[31,15,"P"],[195,78,"Pt"],[209,84,"Po"],[39,19,"K"],[226,88,"Ra"],[222,86,"Rn"],[186,75,"Re"],[103,45,"Rh"],[85,37,"Rb"],[261,104,"Rf"],[45,21,"Sc"],[266,106,"Sg"],[79,34,"Se"],[28,14,"Si"],[108,47,"Ag"],[23,11,"Na"],[88,38,"Sr"],[32,16,"S"],[181,73,"Ta"],[98,43,"Tc"],[128,52,"Te"],[204,81,"Tl"],[119,50,"Sn"],[48,22,"Ti"],[184,74,"W"],[51,23,"V"],[131,54,"Xe"],[89,39,"Y"],[65,30,"Zn"],[91,40,"Zr"]]
+     print("1 for view\n2 for search")
+     try:
+          ele=int(input("take your pick: "))
+          if ele==1:
+               for i in elem:
+                    print(i)
+          else:
+               elempi=input("type elements name here: ")
+               print("")
+               elem.index(elempi)
+               print(elem[elem.index(elempi)])
+               print("symbol:"+str(elemp[elem.index(elempi)][2]))
+               print("atomic mass:"+str(elemp[elem.index(elempi)][0]))
+               print("atomic number and protons/electrons:"+str(elemp[elem.index(elempi)][1]))
+               print("neutrons:"+str(elemp[elem.index(elempi)][0]-elemp[elem.index(elempi)][1]))
+     except:
+          print("error: is not an option")
+def developer():
+     print("not any in exsistance(yet)")
+q1="0"
+q1a=0
+q2="0"
+q2a=0
+q3="0"
+q3a=0
+q4="0"
+q4a=0
+q5="0"
+q5a=0
+q6="0"
+q6a=0
+q7="0"
+q7a=0
+q8="0"
+q8a=0
+q9="0"
+q9a=0
+q10="0"
+q10a=0
+qnum=0
+def quiz(qnum,q1,q1a,q2,q2a,q3,q3a,q4,q4a,q5,q5a,q6,q6a,q7,q7a,q8,q8a,q9,q9a,q10,q10a):
+    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+    quizcor=0
+    if q1!="0":
+        q1an=input(q1+": ")
+        print("")
+        if q1an==q1a:
+            quizcor=quizcor+1
+            print("correct")
+        else:
+            print("wrong it was "+q1a)
+    print("")
+    if q2!="0":
+        q2an=input(q2+": ")
+        print("")
+        if q2an==q2a:
+            quizcor=quizcor+1
+            print("correct")
+        else:
+            print("wrong it was "+q2a)
+    print("")
+    if q3!="0":
+        q3an=input(q3+": ")
+        print("")
+        if q3an==q3a:
+            quizcor=quizcor+1
+            print("correct")
+        else:
+            print("wrong it was "+q3a)
+    print("")
+    if q4!="0":
+        q4an=input(q4+": ")
+        print("")
+        if q4an==q4a:
+            quizcor=quizcor+1
+            print("correct")
+        else:
+            print("wrong it was "+q4a)
+    print("")
+    if q5!="0":
+        q5an=input(q5+": ")
+        print("")
+        if q5an==q5a:
+            quizcor=quizcor+1
+            print("correct")
+        else:
+            print("wrong it was "+q5a)
+    print("")
+    if q6!="0":
+        q6an=input(q6+": ")
+        print("")
+        if q6an==q6a:
+            quizcor=quizcor+1
+            print("correct")
+        else:
+            print("wrong it was "+q6a)
+    print("")
+    if q7!="0":
+        q7an=input(q7+": ")
+        print("")
+        if q7an==q7a:
+            quizcor=quizcor+1
+            print("correct")
+        else:
+            print("wrong it was "+q7a)
+    print("")
+    if q8!="0":
+        q8an=input(q8+": ")
+        print("")
+        if q8an==q8a:
+            quizcor=quizcor+1
+            print("correct")
+        else:
+            print("wrong it was "+q8a)
+    print("")
+    if q9!="0":
+        q9an=input(q9+": ")
+        print("")
+        if q9an==q9a:
+            quizcor=quizcor+1
+            print("correct")
+        else:
+            print("wrong it was "+q9a)
+    print("")
+    if q10!="0":
+        q10an=input(q10+": ")
+        print("")
+        if q10an==q10a:
+            quizcor=quizcor+1
+            print("correct")
+        else:
+            print("wrong it was "+q10a)
+    print("\n\n")
+    print("you got "+str(quizcor)+" out of 10")
+def commonfact():
+    try:
+        print("this finds the common factor of 2 numbers\nif it is taking a long time do ctrl+c on your keyboard\nto stop the process and it should\n come out with \"error: invalid number\"\n")
+        cf1=int(input("first number: "))
+        cf2=int(input("second number: "))
+        lcfn=0
+        if cf2>cf1:
+            lcfn=cf2
+            n=1
+        else:
+            lcfn=cf1
+            n=0
+        x=lcfn-2
+        if cf1==cf2:
+            return str(cf1)
+        if n==0:
+            while lcfn>x:
+                x=x-1
+                if lcfn/x==round(lcfn/x,0):
+                    if cf2/x==round(cf2/x,0):
+                        if x==1:
+                            return "no common factor"
+                        else:
+                            return x
+        else:
+            while lcfn>x:
+                x=x-1
+                if lcfn/x==round(lcfn/x,0):
+                    if cf1/x==round(cf1/x,0):
+                        if x==1:
+                            return "no common factor"
+                        else:
+                            return x
+    except:
+        return "error: invalid number"
+def averages():
+     try:
+          l=[]
+          lmn=[]
+          lmc=[]
+          lmcc=[]
+          mean=0
+          count=int(input("how many variables do you want to average out?"))
+          for i in range(count):
+               l.append(float(input("variable: ")))
+          for i in l:
+               mean+=i
+          print("mean: "+str(mean/count))
+          for i in l:
+               if i in lmn:
+                    lmc[lmn.index(i)]+=1
+               else:
+                    lmn.append(i)
+                    lmc.append(1)
+          for i in lmc:
+               lmcc.append(i)
+          lmcc.sort()
+          x=lmcc[len(lmcc)-1]
+          x=lmc.index(x)
+          x=lmn[x]
+          print("mode: "+str(x))
+          l.sort()
+          x=len(l)/2
+          if round(len(l)/2,0)!=len(l)/2:
+               print("median: "+str(round(l[int(x)])))
+          else:
+               x=l[int(x-1)]+l[int(x)]
+               print("median: "+str(x/2))
+          print("range: "+str(l[len(l)-1]-l[0]))
+          print("the first collum is the variabl\nthe second collum is the frequency")
+          for i in range(len(lmn)):
+               print(str(lmn[i])+" "+str(lmc[i]))
+     except:
+          print("error: invalid number or not a number")
+def sum():
+     sum=0
+     try:
+          count=int(input("how many variables do you want to add up?"))
+          for i in range(count):
+               sum+=float(input("variable: "))
+          print(sum)
+     except:
+          print("error: invalid number or not a number")
+def mathopu():
+     try:
+          l=["var"]
+          print("this may be difficult to understand how to use but i will try to explain\nit allows you to do a repeted\nformula allowing you to do the same formula many times quickly")
+          count=int(input("operators: "))
+          print("operators you may use\n+\n-\n*\n/")
+          for i in range(1,count+1):
+               print("operator: "+str(i))
+               x=input(": ")
+               if x=="+":
+                    l.append("+")
+               elif x=="-":
+                    l.append("-")
+               elif x=="*":
+                    l.append("*")
+               elif x=="/":
+                    l.append("/")
+               else:
+                    int(f)
+               l.append("var")
+          count=int(input("how many times do you want to repeat this formula: "))
+          for i in range(1,count+1):
+               lv=[]
+               for n in l:
+                    if n=="var":
+                         q=float(input("variable: "))
+                         lv.append(q)
+                    elif n=="+":
+                         lv.append("+")
+                         print("+")
+                    elif n=="-":
+                         lv.append("-")
+                         print("-")
+                    elif n=="*":
+                         lv.append("*")
+                         print("*")
+                    elif n=="/":
+                         lv.append("/")
+                         print("/")
+                    else:
+                         int(f)
+               x=len(lv)
+               n=0
+               for i in range(int(len(lv)/2-0.5)):
+                    x-=2
+                    if x==len(lv)-2:
+                         if lv[n+1]=="+":
+                              ans=lv[n]+lv[n+2]
+                         elif lv[n+1]=="-":
+                              ans=lv[n]-lv[n+2]
+                         elif lv[n+1]=="*":
+                              ans=lv[n]*lv[n+2]
+                         else:
+                              ans=lv[n]/lv[n+2]
+                         n=4
+                    else:
+                         if lv[n-1]=="+":
+                              ans+=lv[n]
+                         elif lv[n-1]=="-":
+                              ans-=lv[n]
+                         elif lv[n-1]=="*":
+                              ans*=lv[n]
+                         else:
+                              ans/=lv[n]
+                         n+=2
+               print(ans)
+     except:
+          print("error: not a number or operator")
+def hackerman():
+     print("\n\n\n\n\n\n\n\n\n\n\n\n")
+     l=["crackingpassword.",">>.v,<","<:<<:>","\y/","*","1","html","0","intergrate","index",";",":"," ",",","inter","outer","IP:rendering.","cept","larping","DDOS"]
+     for i in range(100):
+          print(l[random.randint(0,len(l)-1)],end="")
+          t.sleep(0.1)
+while 1==1:
+     print("")
+     a=input()
+     i = 0
+     if a=="timestable":
+          print("")
+          timestable()
+     elif a=="power":
+          print("")
+          power()
+     elif a=="functions":
+          print("")
+          functions()
+     elif a=="guess":
+          print("")
+          guess()
+     elif a=="coinflip":
+          print("")
+          coinflip()
+     elif a=="gradecheck":
+          print("")
+          gradecheck()
+     elif a=="onetowhat":
+          print("")
+          onetowhat()
+     elif a=="math":
+          print("")
+          math()
+     elif a=="commonmulti":
+          print("")
+          commonmulti()
+     elif a=="factor":
+          print("")
+          factor()
+     elif a=="commonfact":
+          print("")
+          print(commonfact())
+     elif a=="guessinggame2p":
+          print("")
+          guessinggame2p()
+     elif a=="fight":
+          print("")
+          fight(p1h,comph,cminp,cmaxp,cminc,cmaxc)
+     elif a=="rps":
+          print("")
+          rps()
+     elif a=="idearate":
+          idearate()
+     elif a=="cat":
+          cat()
+     elif a=="note":
+          note()
+     elif a=="elements":
+          elements()
+     elif a=="developer":
+          developer()
+     elif a=="quiz":
+          qpick=input("1 for change quiz\nanything else for take quiz: ")
+          if qpick=="1":
+               try:
+                    qnum=int(input("how many questions 1-10: "))
+               except:
+                    print("error: invalid number")
+                    qnum=0
+               if qnum>=1:
+                    print("(if you want to remove the question set the question as 0)")
+                    q1=input("1ST question: ")
+                    q1a=input("1ST question answer: ")
+               if qnum>=2:
+                    q2=input("2ND question: ")
+                    q2a=input("2ND question answer: ")
+               if qnum>=3:
+                    q3=input("3RD question: ")
+                    q3a=input("3RD question answer: ")
+               if qnum>=4:
+                    q4=input("4TH question: ")
+                    q4a=input("4TH question answer: ")
+               if qnum>=5:
+                    q5=input("5TH question: ")
+                    q5a=input("5TH question answer: ")
+               if qnum>=6:
+                    q6=input("6TH question: ")
+                    q6a=input("6TH question answer: ")
+               if qnum>=7:
+                    q7=input("7TH question: ")
+                    q7a=input("7TH question answer: ")
+               if qnum>=8:
+                    q8=input("8TH question: ")
+                    q8a=input("8TH question answer: ")
+               if qnum>=9:
+                    q9=input("9TH question: ")
+                    q9a=input("9TH question answer: ")
+               if qnum>=10:
+                    q10=input("10TH question: ")
+                    q10a=input("10TH question answer: ")
+          quiz(qnum,q1,q1a,q2,q2a,q3,q3a,q4,q4a,q5,q5a,q6,q6a,q7,q7a,q8,q8a,q9,q9a,q10,q10a)
+     elif a=="about":
+          print("this was made to be a tab that you never have to close but will server functions\nto your liking, i have made special care to make this uncrashable\nthough can be stalled due to complicatoins")
+     elif a=="averages":
+          averages()
+     elif a=="sum":
+          sum()
+     elif a=="mathopu":
+          mathopu()
+     elif a=="hackerman":
+          hackerman()
+     else:
+          print("")
+          print("invalid type in \"functions\" to see what functions you can use")
